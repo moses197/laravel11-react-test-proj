@@ -54,9 +54,17 @@ export default function Index({auth, projects, queryParams = null}) {
                                         <th className="px-3 py-3"></th>
                                         <th className="px-3 py-3"></th>
                                         <th className="px-3 py-3">
-                                            <TextInput className="w-full" placeholder="Project Name" onBlur={e => searchFieldChanged('name', e.target.value)} onKeyPress={e => onKeyPress('name', e)} /></th>
+                                            <TextInput 
+                                                className="w-full" 
+                                                defaultValue={queryParams.name}
+                                                placeholder="Project Name" 
+                                                onBlur={e => searchFieldChanged('name', e.target.value)} 
+                                                onKeyPress={e => onKeyPress('name', e)} /></th>
                                         <th className="px-3 py-3">
-                                            <SelectInput className="w-full" onChange={e => searchFieldChanged('status', e.target.value) }>
+                                            <SelectInput 
+                                                className="w-full" 
+                                                defaultValue={queryParams.status}
+                                                onChange={e => searchFieldChanged('status', e.target.value) }>
                                                 <option value="">Select Status</option>
                                                 <option value="pending">Pending</option>
                                                 <option value="in_progress">In Progress</option>
